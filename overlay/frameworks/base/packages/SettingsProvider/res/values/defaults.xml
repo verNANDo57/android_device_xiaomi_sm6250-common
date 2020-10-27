@@ -19,6 +19,24 @@
 <resources>
 
     <!-- Set the automatic brightness mode on by default -->
-    <bool name="def_screen_brightness_automatic_mode">true</bool>
+    <bool name="def_screen_brightness_automatic_mode">false</bool>
+    
+    <!-- Default screen brightness, from 0 to 255. 78 is 30%. -->
+    <integer name="def_screen_brightness">50</integer>
+    
+    <!-- Disable bluetooth by default -->
+    <bool name="def_bluetooth_on">false</bool>
+    
+    <!-- 30 seconds for default screen timeout -->
+    <integer name="def_screen_off_timeout">30000</integer>
+    
+    <!-- Disable dial pad tones by default -->
+    <bool name="def_dtmf_tones_enabled">false</bool>
+    
+    <!-- Disable screen locking sounds by default -->
+    <integer name="def_lockscreen_sounds_enabled">0</integer>
+
+    <!-- Enable vibrate for calls by default -->
+    <bool name="def_vibrate_when_ringing">true</bool>
 
 </resources>

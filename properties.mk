@@ -1,3 +1,6 @@
+#Build FP to be picked by both system and vendor
+BUILD_FINGERPRINT := "google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys"
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
@@ -111,7 +114,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.preview.ubwc=0 \
     vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    camera.disable_zsl_mode=1 \
+    vidc.enc.dcvs.extra-buff-count=2 
+    vendor.camera.aux.packagelist=com.android.camera
 
 # CNE
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -122,29 +127,43 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.allow_encrypt_override=true \
     ro.crypto.volume.filenames_mode=aes-256-cts
 
+# Dirac headset effect
+ro.audio.soundfx.dirac=true
+persist.audio.dirac.speaker=true
+
+# DPM
+persist.dpm.feature=1
+
+# HVDCP
+persist.vendor.cp.taper_term_mv=6500
+persist.vendor.cp.fcc_main_ua=400000
+
 # Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.early_app_phase_offset_ns=1500000 \
-    debug.sf.early_gl_app_phase_offset_ns=15000000 \
-    debug.sf.early_gl_phase_offset_ns=3000000 \
-    debug.sf.early_phase_offset_ns=1500000 \
-    debug.sf.disable_backpressure=1 \
-    debug.sf.enable_hwc_vds=1 \
-    debug.sf.hw=1 \
-    debug.sf.latch_unsignaled=1 \
-    ro.opengles.version=196610 \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
-    ro.surface_flinger.max_virtual_display_dimension=4096 \
-    ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
-    ro.surface_flinger.has_wide_color_display=true \
-    ro.surface_flinger.use_color_management=true \
-    ro.vendor.display.cabl=0 \
-    vendor.display.disable_skip_validate=1 \
-    vendor.display.enable_default_color_mode=1 \
-    vendor.gralloc.enable_fb_ubwc=1
+debug.sf.early_phase_offset_ns=11600000
+debug.sf.early_app_phase_offset_ns=11600000
+debug.sf.early_gl_phase_offset_ns=3000000
+debug.sf.early_gl_app_phase_offset_ns=15000000
+debug.sf.phase_offset_threshold_for_next_vsync_ns=11600000
+persist.sys.sf.color_saturation=1.0
+ro.hardware.egl=adreno
+ro.hardware.vulkan=adreno
+ro.opengles.version=196610
+ro.vendor.cabc.enable=true
+vendor.display.comp_mask=0
+vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
+vendor.display.disable_decimation=1
+vendor.display.disable_excl_rect=0
+vendor.display.disable_hw_recovery=1
+vendor.display.disable_hw_recovery_dump=1
+vendor.display.disable_idle_time_hdr=1
+vendor.display.disable_inline_rotator=1
+vendor.display.disable_scaler=0
+vendor.display.disable_ui_3d_tonemap=1
+vendor.display.enable_default_color_mode=0
+vendor.display.enable_null_display=0
+vendor.display.enable_optimize_refresh=1
+vendor.display.qdcm.mode_combine=1
+vendor.gralloc.disable_ubwc=0
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -159,6 +178,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Keymaster 4.0 - TDES support
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore_desede=true
+    
+# Keyguard
+keyguard.no_require_sim=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -178,16 +200,27 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.multisim.config=dsds \
-    persist.vendor.data.mode=concurrent \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.atfwd.start=true \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.sib16_support=1 \
-    ro.telephony.default_network=22,22 \
-    ro.vendor.use_data_netmgrd=true
+   DEVICE_PROVISIONED=1
+   persist.data.df.dev_name=rmnet_usb0
+   persist.radio.atfwd.start=false
+   persist.radio.multisim.config=dsds
+   persist.vendor.data.iwlan.enable=true
+   persist.vendor.data.mode=concurrent
+   persist.vendor.radio.apm_sim_not_pwdn=1
+   persist.vendor.radio.custom_ecc=1
+   persist.vendor.radio.data_con_rprt=1
+   persist.vendor.radio.enable_temp_dds=true
+   persist.vendor.radio.enableadvancedscan=true
+   persist.vendor.radio.procedure_bytes=SKIP
+   persist.vendor.radio.rat_on=combine
+   persist.vendor.radio.sib16_support=1
+   persist.vendor.radio.snapshot_enabled=1
+   persist.vendor.radio.snapshot_timer=5
+   ril.subscription.types=NV,RUIM
+   ro.telephony.default_network=22,20
+   ro.telephony.iwlan_operation_mode=legacy
+   ro.vendor.use_data_netmgrd=true
+   telephony.lteOnCdmaDevice=1
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     DEVICE_PROVISIONED=1 \
@@ -206,3 +239,44 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WFD
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.debug.wfd.enable=1
+
+# VoLTE
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
+# ADB props
+ro.secure=1 
+ro.debuggable=0
+
+# Hack for Youtube
+sys.display-size=3840x2160
+
+#touch improvements
+PRODUCT_PROPERTY_OVERRIDES += \
+	touch.pressure.scale=0.001 \
+	persist.sys.ui.hw=1 \
+	view.scroll_friction=10 \
+	touch.size.calibration=diameter \
+	touch.size.scale=1 \
+	touch.size.bias=0 \
+	touch.size.isSummed=0 \
+	touch.pressure.scale=0.001 \
+	touch.orientation.calibration=none \
+	touch.distance.calibration=none \
+	touch.distance.scale=0 \
+	touch.coverage.calibration=box \
+	touch.gestureMode=spots \
+	MultitouchSettleInterval=1ms \
+	MultitouchMinDistance=1px \
+	TapInterval=1ms \
+	TapSlop=1px
+
+# Zygote
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true
+    
+ # Wireless display
+debug.sf.latch_unsignaled=1
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0

@@ -1,0 +1,50 @@
+allow system_app sysfs_battery_supply:dir search;
+allow system_app sysfs_battery_supply:file rw_file_perms;
+allow system_app sysfs_zram:dir search;
+allow system_app sysfs_zram:file { getattr open read };
+allow system_app wificond:binder call;
+allow system_app sysfs_leds:dir search;
+allow system_app sysfs_fastcharge:file { open read getattr write };
+allow system_app sysfs_graphics:dir search;
+allow system_app sysfs_graphics:file rw_file_perms;
+allow system_app sysfs:file { getattr open write read };
+allow system_app sysfs_vibrator:file rw_file_perms;
+allow system_app sysfs_vibrator:dir search;
+
+# zram
+r_dir_file(system_app sysfs_zram)
+
+# KCAL
+allow system_app kcal_dev:file rw_file_perms;
+allow system_app kcal_dev:dir search;
+allow system_app sysfs_vibrator:dir search;
+allow system_app sysfs_vibrator:file { read write };
+allow system_app sysfs_vibrator:file open;
+allow system_app sysfs_vibrator:file getattr;
+allow system_app spectrum_prop:property_service set;
+allow system_app sysfs_leds:dir search;
+allow system_app sysfs_leds:file { open getattr write };
+allow system_app sysfs:file { getattr open read write };
+allow system_app sysfs_backlight:file { open read getattr write };
+allow system_app sysfs_egain:file { open read getattr write };
+allow system_app sysfs_hgain:file { open read getattr write };
+allow system_app spectrum_prop:property_service set;
+allow system_app sysfs_touchboost:file { open read getattr write };
+
+allow system_app gpuboost_prop:property_service set;
+get_prop(system_app, gpuboost_prop);
+
+allow system_app cpuboost_prop:property_service set;
+get_prop(system_app, cpuboost_prop);
+
+allow system_app sysfs_highperfaudio:file { open read getattr write };
+
+# allow system apps to read battery status
+r_dir_file(system_app, sysfs_battery_supply)
+allow system_app sysfs_msmthermal:file { open read getattr write };
+allow system_app sysfs_corecontrol:file { open read getattr write };
+allow system_app sysfs_vddrestrict:file { open read getattr write };
+allow system_app cpucore_prop:property_service set;
+get_prop(system_app, cpucore_prop);
+
+allow system_app sysfs:file { read open getattr };
