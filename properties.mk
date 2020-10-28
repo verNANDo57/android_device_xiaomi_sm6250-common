@@ -162,6 +162,10 @@ vendor.display.enable_optimize_refresh=1
 vendor.display.qdcm.mode_combine=1
 vendor.gralloc.disable_ubwc=0
 
+# Enable EGL image tracking on SF for b/137514000
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.enable_egl_image_tracker=1
+
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
