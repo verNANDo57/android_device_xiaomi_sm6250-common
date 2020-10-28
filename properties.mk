@@ -192,6 +192,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable_bframes=1 \
     vendor.vidc.enc.disable.pq=true
 
+# Memory
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.vendor.qti.sys.fw.bservice_enable=true
+
 # Netflix
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.netflix.bsp_rev=Q6250-19132-1
