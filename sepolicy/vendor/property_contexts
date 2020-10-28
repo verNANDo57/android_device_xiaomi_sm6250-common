@@ -47,3 +47,10 @@ persist.gpuboost.profile                u:object_r:gpuboost_prop:s0
 # CPUboost
 persist.cpuboost.profile                u:object_r:cpuboost_prop:s0
 persist.cpucore.profile                 u:object_r:cpucore_prop:s0
+
+# MIUI specific
+ro.cust.test                   u:object_r:exported_system_prop:s0
+ro.boot.hwc                    u:object_r:exported_default_prop:s0
+ro.product.mod_device          u:object_r:exported2_default_prop:s0
+ro.product.system.manufacturer u:object_r:exported2_default_prop:s0 exact string
+ro.miui.                       u:object_r:exported_system_prop:s0
