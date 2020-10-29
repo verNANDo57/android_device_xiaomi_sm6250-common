@@ -21,9 +21,6 @@
 # definition file).
 #
 
-# Inherit properties
-$(call inherit-product, $(LOCAL_PATH)/properties.mk)
-
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
@@ -381,7 +378,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.redmi_sm6250
+    android.hardware.power@1.3-service.xiaomi_sm6250
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml \

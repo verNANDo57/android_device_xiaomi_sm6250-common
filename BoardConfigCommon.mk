@@ -34,6 +34,10 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := atoll
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
 
+# QCOM
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -147,6 +151,15 @@ LOC_HIDL_VERSION := 3.0
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/configs/manifests/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/manifests/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/manifests/compatibility_matrix.xml
+ODM_MANIFEST_SKUS += \
+    joyeuse
+ODM_MANIFEST_JOYEUSE_FILES := $(COMMON_PATH)/configs/manifests/manifest_joyeuse.xml
+
+# Properties
+TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_atoll
