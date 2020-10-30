@@ -298,8 +298,7 @@ PRODUCT_PACKAGES += \
     init.parallax.rc \
     init.parallax.sh \
     init.safailnet.rc \
-    ueventd.qcom.rc \
-    init.mi_thermald.rc 
+    ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
