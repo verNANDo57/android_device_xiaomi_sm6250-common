@@ -1,6 +1,3 @@
-# Qcom
-ro.vendor.qti.va_odm.support=1
-
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
@@ -246,8 +243,10 @@ persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 
 # ADB props
-ro.secure=1 
-ro.debuggable=1
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.debuggable=1 \
+    ro.secure=1 \
+    ro.adb.secure=0
 
 # Display size
 sys.display-size=2400x1080
