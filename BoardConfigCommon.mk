@@ -166,10 +166,6 @@ TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_atoll
-TARGET_RECOVERY_DEVICE_MODULES := libinit_atoll
-
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
