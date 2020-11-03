@@ -1,6 +1,9 @@
 # Biometric
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_atoll   u:object_r:hal_fingerprint_atoll_exec:s0
 
+# Camera
+/data/vendor/qcam(/.*)?                         u:object_r:vendor_camera_data_file:s0
+
 # Fingerprint
 /data/gf_data(/.*)?                             u:object_r:fingerprintd_data_file:s0
 /data/vendor/fpc(/.*)?                          u:object_r:fingerprint_vendor_data_file:s0
@@ -48,7 +51,7 @@
 /sys/module/msm_thermal/parameters/enabled		u:object_r:sysfs_msmthermal:s0
 /sys/module/msm_thermal/vdd_restriction/enabled		u:object_r:sysfs_vddrestrict:s0
 
-# Power
+# Power HAL
 /vendor/bin/hw/android\.hardware\.power@1\.3-service\.xiaomi_sm6250                                     u:object_r:hal_power_default_exec:s0
 
 # Battery
