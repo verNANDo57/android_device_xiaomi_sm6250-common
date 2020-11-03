@@ -187,6 +187,7 @@ PRODUCT_BOOT_JARS += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    libstdc++.vendor \
     CameraGo
 
 PRODUCT_PACKAGES += \
