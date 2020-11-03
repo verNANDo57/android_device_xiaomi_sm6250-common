@@ -259,11 +259,6 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0_system
 
-# Init scripts
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/bin/init.qcom.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.post_boot.sh \
-    $(LOCAL_PATH)/rootdir/bin/init.qti.chg_policy.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.chg_policy.sh
-
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
@@ -366,10 +361,6 @@ PRODUCT_PACKAGES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson
-
-# Recovery
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/bin/init.recovery.qcom.sh:recovery/root/init.recovery.qcom.sh
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -534,6 +525,8 @@ PRODUCT_PACKAGES += \
     init.parallax.rc \
     init.parallax.sh \
     init.safailnet.rc \
+    init.qti.chg_policy.sh \
+    init.recovery.qcom.sh \
     ueventd.qcom.rc
 
 # XiaomiParts
