@@ -363,6 +363,10 @@ PRODUCT_PACKAGES += \
     rcs_service_api \
     rcs_service_api.xml
 
+# QMI
+PRODUCT_PACKAGES += \
+    libjson
+
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/init.recovery.qcom.sh:recovery/root/init.recovery.qcom.sh
