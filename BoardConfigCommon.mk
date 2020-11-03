@@ -62,6 +62,9 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# CNE and DPM
+BOARD_USES_QCNE := true
+
 # Display
 USE_DEVICE_SPECIFIC_DISPLAY := true
 DEVICE_SPECIFIC_DISPLAY_PATH := $(COMMON_PATH)/qcom-caf/display
