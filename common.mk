@@ -455,6 +455,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # TextClassifier
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
