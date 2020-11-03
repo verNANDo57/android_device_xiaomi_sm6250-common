@@ -521,7 +521,6 @@ PRODUCT_PACKAGES += \
     init.parallax.rc \
     init.parallax.sh \
     init.safailnet.rc \
-    init.qti.chg_policy.sh \
     ueventd.qcom.rc
 
 # XiaomiParts
