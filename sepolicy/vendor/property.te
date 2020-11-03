@@ -16,4 +16,3 @@ type cpuboost_prop, property_type;
 
 #Thermal
 type cpucore_prop, property_type;
-
