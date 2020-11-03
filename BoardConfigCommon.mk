@@ -6,7 +6,9 @@
 
 COMMON_PATH := device/xiaomi/sm6250-common
 
-BUILD_BROKEN_DUP_RULES := true
+# Platform
+TARGET_BOARD_PLATFORM := atoll
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
 
 # Architecture
 TARGET_ARCH := arm64
