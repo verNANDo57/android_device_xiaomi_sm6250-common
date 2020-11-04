@@ -12,9 +12,9 @@ import java.util.List;
 
 public class AmbientUtils {
 
-    public static final String TAG = "ZenPartsActions";
+    public static final String TAG = "XiaomiPartsActions";
 
-    public static final String PREFERENCES = "ZenPartsPreferences";
+    public static final String PREFERENCES = "XiaomiPartsPreferences";
     public static final String AMBIENT_GESTURE_HAPTIC_FEEDBACK =
             "AMBIENT_GESTURE_HAPTIC_FEEDBACK";
 
@@ -54,3 +54,4 @@ public class AmbientUtils {
         settings.unregisterOnSharedPreferenceChangeListener(preferenceListener);
     }
 }
+

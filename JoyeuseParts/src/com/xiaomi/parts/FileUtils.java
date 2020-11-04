@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Asus-SDM660 Project
+ * Copyright (C) 2020 The Xiaomi-SM6250 Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,14 +132,6 @@ class FileUtils {
         return defValue;
     }
 
-    static boolean getFilesValueAsBoolean(String filename, boolean defValue) {
-        String fileValue = readLine(filename);
-        if (fileValue != null) {
-            return !fileValue.equals("N");
-        }
-        return defValue;
-    }
-
     static void setProp(String prop, boolean value) {
         if (value) {
             SystemProperties.set(prop, "1");
@@ -158,13 +150,5 @@ class FileUtils {
 
     static String getStringProp(String prop, String defaultValue) {
         return SystemProperties.get(prop, defaultValue);
-    }
-
-    static void setintProp(String prop, int value) {
-        SystemProperties.set(prop, String.valueOf(value));
-    }
-
-    static int getintProp(String prop, int defaultValue) {
-        return SystemProperties.getInt(prop, defaultValue);
     }
 }

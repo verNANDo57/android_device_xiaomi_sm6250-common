@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The Xiaomi-SM6250 Project
+ * Copyright (C) 2020 Paranoid Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,19 +11,17 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License
+ * limitations under the License.
  */
 
-package com.xiaomi.parts;
+package com.xiaomi.parts.speaker;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class DeviceSettingsActivity extends Activity {
-
-    private DeviceSettings mDeviceSettingsFragment;
+public class ClearSpeakerActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +30,12 @@ public class DeviceSettingsActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
+        ClearSpeakerFragment clearSpeakerFragment;
         if (fragment == null) {
-            mDeviceSettingsFragment = new DeviceSettings();
+            clearSpeakerFragment = new ClearSpeakerFragment();
             getFragmentManager().beginTransaction()
-                    .add(android.R.id.content, mDeviceSettingsFragment)
+                    .add(android.R.id.content, clearSpeakerFragment)
                     .commit();
-        } else {
-            mDeviceSettingsFragment = (DeviceSettings) fragment;
         }
     }
 

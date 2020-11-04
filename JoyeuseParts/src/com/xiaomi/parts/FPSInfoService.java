@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The OmniROM Project
+ * Copyright (C) 2020 The Xiaomi-SM6250 Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,7 @@ public class FPSInfoService extends Service {
     private final String TAG = "FPSInfoService";
     private String mFps = null;
 
-    private static final String MEASURED_FPS = "/sys/devices/virtual/graphics/fb0/measured_fps";
+    private static final String MEASURED_FPS = "/sys/kernel/debug/dri/0/crtc97/fps";
 
     private IDreamManager mDreamManager;
 
@@ -96,7 +96,7 @@ public class FPSInfoService extends Service {
 
             final int textSize = Math.round(12 * density);
 
-            Typeface typeface = Typeface.create("sans-serif-condensed", Typeface.BOLD);
+            Typeface typeface = Typeface.create("monospace", Typeface.NORMAL);
 
             mOnlinePaint = new Paint();
             mOnlinePaint.setTypeface(typeface);
@@ -109,7 +109,7 @@ public class FPSInfoService extends Service {
             float descent = mOnlinePaint.descent();
             mFH = (int)(descent - mAscent + .5f);
 
-            final String maxWidthStr="60.1";
+            final String maxWidthStr="fps: 60.1";
             mMaxWidth = (int)mOnlinePaint.measureText(maxWidthStr);
 
             updateDisplay();
@@ -195,7 +195,7 @@ public class FPSInfoService extends Service {
         public void run() {
             try {
                 while (!mInterrupt) {
-                    sleep(1000);
+                    sleep(500);
                     StringBuffer sb=new StringBuffer();
                     String fpsVal = FPSInfoService.readOneLine(MEASURED_FPS);
                     mHandler.sendMessage(mHandler.obtainMessage(1, fpsVal));
@@ -281,6 +281,13 @@ public class FPSInfoService extends Service {
     };
 
     private boolean isDozeMode() {
+        try {
+            if (mDreamManager != null && mDreamManager.isDreaming()) {
+                return true;
+            }
+        } catch (RemoteException e) {
+            return false;
+        }
         return false;
     }
 

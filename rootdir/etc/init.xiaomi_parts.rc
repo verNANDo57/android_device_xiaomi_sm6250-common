@@ -15,70 +15,31 @@
 #
 
 on boot
-    # XiaomiParts
-    chown system system /sys/devices/virtual/timed_output/vibrator/vtg_level
-    chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level
-    chown system system /sys/class/timed_output/vibrator/vtg_level
-    chmod 0660 /sys/class/timed_output/vibrator/vtg_level
-    chown system system /sys/module/hall/parameters/hall_toggle
-    chmod 0660 /sys/module/hall/parameters/hall_toggle
 
-    # Touchboost
-    chown system system /sys/module/msm_performance/parameters/touchboost
-    chmod 0660 /sys/module/msm_performance/parameters/touchboost
+# KCAL permissions
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_enable
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_cont
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_sat
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_hue
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_min
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
 
-    # FPS
-    chown system system /sys/devices/virtual/graphics/fb0/measured_fps
-    chmod 0660 /sys/devices/virtual/graphics/fb0/measured_fps
-    chown system system /sys/class/graphics/fb0/measured_fps
-    chmod 0660 /sys/class/graphics/fb0/measured_fps
+# USB Fastcharge permissions
+  chown system system /sys/kernel/fast_charge/force_fast_charge
+  chmod 0660 /sys/kernel/fast_charge/force_fast_charge
 
-    # High Performance Audio
-    chown system system /sys/module/snd_soc_wcd9330/parameters/high_perf_mode
-    chmod 0660 /sys/module/snd_soc_wcd9330/parameters/high_perf_mode
+# FPS Info permissions
+  chown system graphics /sys/kernel/debug/dri/0/crtc97/fps
+  chmod 0666 /sys/kernel/debug/dri/0/crtc97/fps
 
-    # USB Fastcharge
-     chown system system /sys/kernel/fast_charge/force_fast_charge
-     chmod 0660 /sys/kernel/fast_charge/force_fast_charge
-
-    # Backlight Dimmer
-     chown system system /sys/module/mdss_fb/parameters/backlight_dimmer
-     chmod 0660 /sys/module/mdss_fb/parameters/backlight_dimmer
-    
-    # Audio Amplification
-    chown system system /sys/kernel/sound_control/headphone_gain
-    chown system system /sys/kernel/sound_control/mic_gain
-    chown system system /sys/kernel/sound_control/earpiece_gain
-    chown system system /sys/kernel/sound_control/speaker_gain
-    chmod 0660 /sys/kernel/sound_control/headphone_gain
-    chmod 0660 /sys/kernel/sound_control/mic_gain
-    chmod 0660 /sys/kernel/sound_control/earpiece_gain
-    chmod 0660 /sys/kernel/sound_control/speaker_gain
-	  
-    # KCAL permissions
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
-    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
-    chmod 660 /sys/devices/platform/kcal_ctrl.0/kcal
-    chmod 660 /sys/devices/platform/kcal_ctrl.0/kcal_enable
-    chmod 660 /sys/devices/platform/kcal_ctrl.0/kcal_cont
-    chmod 660 /sys/devices/platform/kcal_ctrl.0/kcal_sat
-    chmod 660 /sys/devices/platform/kcal_ctrl.0/kcal_hue
-    chmod 660 /sys/devices/platform/kcal_ctrl.0/kcal_min
-    chmod 660 /sys/devices/platform/kcal_ctrl.0/kcal_val
-
-service folio_daemon /system/bin/folio_daemon
-    class late_start
-    user system
-    group system uhid
-    disabled
-
-on property:persist.service.folio_daemon=0
-    stop folio_daemon
-
-on property:persist.service.folio_daemon=1
-    start folio_daemon
+# Touchboost permissions
+  chown system system /sys/module/msm_performance/parameters/touchboost
+  chmod 0660 /sys/module/msm_performance/parameters/touchboost
