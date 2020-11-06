@@ -48,8 +48,7 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
-    tinymix \
-    libvolumelistener
+    tinymix
 
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
