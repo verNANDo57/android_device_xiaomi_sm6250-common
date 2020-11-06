@@ -371,7 +371,10 @@ PRODUCT_PACKAGES += \
     libjson
 
 # Soong namespaces
-QCOM_SOONG_NAMESPACE := $(LOCAL_PATH)
+QCOM_SOONG_NAMESPACE := \
+    $(LOCAL_PATH) \
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
+    vendor/qcom/opensource/commonsys/system/bt/conf
 
 # Telephony
 PRODUCT_PACKAGES += \
