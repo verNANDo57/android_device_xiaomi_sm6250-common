@@ -145,7 +145,6 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_xiaomi_sm6250
 TARGET_PROVIDES_KEYMASTER := true
 
 # Media
-TARGET_USES_ION := true
 TARGET_DISABLED_UBWC := true
 
 # Partitions
