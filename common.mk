@@ -310,6 +310,7 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
+    libOmxVideoDSMode \
     libstagefrighthw
 
 # Public Libraries
