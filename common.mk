@@ -369,12 +369,12 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     gralloc.atoll \
     hwcomposer.atoll \
+    libvulkan \
     memtrack.atoll \
     libdisplayconfig \
     libdisplayconfig.vendor \
     liboverlay \
     libtinyxml \
-    libvulkan \
     libqdMetaData \
     libqdMetaData.system
 
