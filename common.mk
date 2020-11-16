@@ -156,8 +156,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    BluetoothQti \
-    libbtconfigstore
+    BluetoothQti
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
