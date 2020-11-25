@@ -481,8 +481,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     setup_logical.sh \
     init.class_main.sh \
-    init.msm.usb.configfs.rc \
-    init.xiaomi_parts.rc \
+    init.xiaomiparts.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
@@ -492,13 +491,8 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.recovery.qcom.rc \
     init.target.rc \
-    init.gpuboost.rc \
-    init.gpuboost.sh \
-    init.cpuboost.rc \
-    init.cpuboost.sh \
-    init.parallax.rc \
-    init.parallax.sh \
     init.safailnet.rc \
+    init.device.rc \
     ueventd.qcom.rc
 
 # XiaomiParts
