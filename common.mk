@@ -164,6 +164,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcutils_shim
 
+# Servicetracker
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetracker@1.0.vendor \
+    vendor.qti.hardware.servicetracker@1.1.vendor
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     BluetoothQti
