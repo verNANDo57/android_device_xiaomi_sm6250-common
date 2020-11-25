@@ -15,6 +15,7 @@ persist.vendor.btstack.aac_frm_ctl.enabled=true
 persist.vendor.btstack.enable.twsplus=true
 persist.vendor.service.bdroid.soc.alwayson=true
 ro.bluetooth.library_name=libbluetooth_qti.so
+persist.vendor.bt.a2dp.aac_whitelist=false
 
 # CNE
 persist.vendor.cne.feature=1
