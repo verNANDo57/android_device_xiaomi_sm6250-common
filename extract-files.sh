@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2018-2020 The LineageOS Project
+# Copyright (C) 2018-2020 The RROS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -11,9 +11,9 @@ set -e
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-LINEAGE_ROOT="${MY_DIR}"/../../..
+RR_ROOT="${MY_DIR}"/../../..
 
-HELPER="${LINEAGE_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
+HELPER="${RR_ROOT}/vendor/rr/build/tools/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -51,16 +51,20 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+    product/lib64/libdpmframework.so)
+        $PATCHELF --add-needed "libcutils_shim.so" "${2}"
+        ;;
     vendor/lib64/hw/camera.qcom.so)
-        patchelf --remove-needed "libMegviiFacepp-0.5.2.so" "${2}"
-        patchelf --remove-needed "libmegface.so" "${2}"
-        patchelf --add-needed "libshim_megvii.so" "${2}"
+        $PATCHELF --remove-needed "libMegviiFacepp-0.5.2.so" "${2}"
+        $PATCHELF --remove-needed "libmegface.so" "${2}"
+        $PATCHELF --add-needed "libc++demangle.so" "${2}"
+        $PATCHELF --add-needed "libshim_megvii.so" "${2}"
         ;;
     esac
 }
 
 # Initialize the helper for common device
-setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEAN_VENDOR}"
+setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${RR_ROOT}" true "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
@@ -68,7 +72,7 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
 if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
     # Reinitialize the helper for device
     source "${MY_DIR}/../${DEVICE}/extract-files.sh"
-    setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
+    setup_vendor "${DEVICE}" "${VENDOR}" "${RR_ROOT}" false "${CLEAN_VENDOR}"
 
     extract "${MY_DIR}/../${DEVICE}/proprietary-files.txt" "${SRC}" \
             "${KANG}" --section "${SECTION}"
