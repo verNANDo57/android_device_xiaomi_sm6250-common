@@ -160,6 +160,10 @@ PRODUCT_PACKAGES += \
     r-gsi.avbpubkey \
     s-gsi.avbpubkey
 
+# Shims
+PRODUCT_PACKAGES += \
+    libcutils_shim
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     BluetoothQti
