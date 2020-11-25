@@ -170,22 +170,6 @@ on boot
     mkdir /dev/socket/qmux_radio 0770 radio radio
     chmod 2770 /dev/socket/qmux_radio
 
-   # System detailed Info 
-    chown system system /sys/class/thermal/thermal_zone0/temp
-    chown system system /sys/class/power_supply/battery/temp
-    chown system system /sys/class/power_supply/bms/charge_full
-    chown system system /sys/class/power_supply/bms/charge_full_design
-    chown system system /sys/class/power_supply/battery/cycle_count
-    chown system graphics /sys/kernel/gpu/gpu_clock
-    chown system graphics /sys/kernel/gpu/gpu_busy
-    chmod 0666 /sys/class/thermal/thermal_zone0/temp
-    chmod 0666 /sys/class/power_supply/battery/temp
-    chmod 0666 /sys/class/power_supply/bms/charge_full
-    chmod 0666 /sys/class/power_supply/bms/charge_full_design
-    chmod 0666 /sys/class/power_supply/battery/cycle_count
-    chmod 0660 /sys/kernel/gpu/gpu_clock
-    chmod 0660 /sys/kernel/gpu/gpu_busy
-
     chmod 0666 /sys/class/power_supply/battery/charging_enabled
     chown system system /sys/class/power_supply/battery/charging_enabled
 
