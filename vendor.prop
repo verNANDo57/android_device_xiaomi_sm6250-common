@@ -76,7 +76,7 @@ vendor.audio.feature.hifi_audio.enable=false
 vendor.audio.feature.hwdep_cal.enable=false
 vendor.audio.feature.incall_music.enable=true
 vendor.audio.feature.keep_alive.enable=true
-vendor.audio.feature.kpi_optimize.enable=true
+vendor.audio.feature.kpi_optimize.enable=false
 vendor.audio.feature.maxx_audio.enable=false
 vendor.audio.feature.multi_voice_session.enable=true
 vendor.audio.feature.ras.enable=true
@@ -140,6 +140,11 @@ ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Display
+debug.sf.early_phase_offset_ns=11600000
+debug.sf.early_app_phase_offset_ns=11600000
+debug.sf.early_gl_phase_offset_ns=3000000
+debug.sf.early_gl_app_phase_offset_ns=15000000
+debug.sf.phase_offset_threshold_for_next_vsync_ns=11600000
 persist.sys.sf.color_saturation=1.0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
@@ -158,6 +163,7 @@ vendor.display.disable_ui_3d_tonemap=1
 vendor.display.enable_default_color_mode=0
 vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
+vendor.display.qdcm.mode_combine=1
 vendor.gralloc.disable_ubwc=0
 
 # FM
@@ -228,3 +234,8 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 # WFD
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
+
+# ZRAM writeback
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=180
+ro.zram.periodic_wb_delay_hours=24
