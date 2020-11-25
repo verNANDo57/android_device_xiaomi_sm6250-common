@@ -52,10 +52,6 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio@2.0-impl \
-    audio.bluetooth.default
-
-PRODUCT_PACKAGES += \
     libsndmonitor \
     libhdmiedid \
     libhfp
@@ -127,7 +123,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level-0.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_0_3.xml \
-    frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml
+    frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
+    frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -163,9 +161,34 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcutils_shim
 
+# Servicetracker
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetracker@1.0.vendor \
+    vendor.qti.hardware.servicetracker@1.1.vendor
+
 # Bluetooth
 PRODUCT_PACKAGES += \
-    BluetoothQti
+    libbthost_if \
+    liba2dpoffload \
+    libldacBT_dec \
+    libbluetooth_qti \
+    libbtconfigstore \
+    BluetoothQti \
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@1.0-impl
+    
+
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio@2.0.vendor \
+    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio@2.0 \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.0-impl \
+    vendor.qti.hardware.bluetooth_audio@2.0 \
+    com.qualcomm.qti.bluetooth_audio@1.0 \
+    com.qualcomm.qti.bluetooth_audio@1.0-impl \
+    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
+    audio.bluetooth.default
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -219,6 +242,7 @@ PRODUCT_PACKAGES += \
     CameraGo
 
 PRODUCT_PACKAGES += \
+    libc++demangle_vendor \
     libshim_megvii
 
 PRODUCT_PACKAGES += \
@@ -264,6 +288,12 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0_system
+
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -347,9 +377,6 @@ PRODUCT_PACKAGES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson
-
-# Soong namespaces
-QCOM_SOONG_NAMESPACE := $(LOCAL_PATH)
 
 # Telephony
 PRODUCT_PACKAGES += \
