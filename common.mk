@@ -176,7 +176,6 @@ PRODUCT_PACKAGES += \
     BluetoothQti \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0-impl
-    
 
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0.vendor \
