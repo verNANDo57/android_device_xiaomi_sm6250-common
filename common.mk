@@ -438,9 +438,30 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0 \
+    android.hardware.drm@1.1 \
+    android.hardware.drm@1.2 \
+    android.hardware.drm@1.3 \
     android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.1-impl \
+    android.hardware.drm@1.2-impl \
+    android.hardware.drm@1.3-impl \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.3-service.clearkey
+    android.hardware.drm@1.1-service \
+    android.hardware.drm@1.2-service \
+    android.hardware.drm@1.3-service \
+    android.hardware.drm@1.3-service.clearkey \
+    android.hardware.drm@1.2-service.clearkey \
+    android.hardware.drm@1.1-service.clearkey \
+    android.hardware.drm@1.0-service.clearkey \
+    android.hardware.drm@1.0-service.wfdhdcp \
+    android.hardware.drm@1.1-service.wfdhdcp \
+    android.hardware.drm@1.2-service.wfdhdcp \
+    android.hardware.drm@1.3-service.wfdhdcp \
+    android.hardware.drm@1.2-service.widevine
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/manifests/manifest_android.hardware.drm@1.2-service.widevine.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/manifest_android.hardware.drm@1.2-service.widevine.xml
 
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
