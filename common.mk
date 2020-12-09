@@ -463,9 +463,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/manifests/manifest_android.hardware.drm@1.2-service.widevine.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/manifest_android.hardware.drm@1.2-service.widevine.xml
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml
-
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 
