@@ -520,7 +520,7 @@ PRODUCT_PACKAGES += \
 
 # XiaomiParts
 PRODUCT_PACKAGES += \
-    JoyeuseParts
+    XiaomiParts
 
 # Doze
 PRODUCT_PACKAGES += \

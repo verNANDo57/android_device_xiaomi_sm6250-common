@@ -113,6 +113,7 @@
         </activity>
 
         <service android:name=".StartAction" />
+
         <service
             android:name=".XiaomipartsTile"
             android:enabled="true"
@@ -124,16 +125,6 @@
             </intent-filter>
         </service>
 
-        <service
-            android:name="com.xiaomi.parts.LogTile"
-            android:icon="@drawable/ic_qs_log"
-            android:label="@string/quick_settings_log_tile_label"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
         <service
             android:name=".FPSInfoService"
             android:exported="false">
