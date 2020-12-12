@@ -15,7 +15,7 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="advanced_settings">Joyeuse Parts</string>
+    <string name="advanced_settings">Xiaomi Parts</string>
     <string name="advanced_settings_summary">Ajustes específicos do device</string>
 
     <string name="display_title">Tela</string>
@@ -84,11 +84,6 @@
     <string name="custom_seekbar_default_value">Padrão</string>
     <string name="custom_seekbar_default_value_to_set">Valor padrão: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
     <string name="custom_seekbar_default_value_is_set">O valor padrão definido é</string>
-
-    <!-- Log Tile -->
-    <string name="quick_settings_log_tile_label">LogTile</string>
-    <string name="quick_settings_log_tile_dialog_title">Opções</string>
-    <string name="cannot_get_su">A ação falhou devido à falta de acesso de superusuário</string>
 
     <!-- FPS Info -->
     <string name="fps_info_title">Sobreposição de informações FPS</string>
@@ -163,5 +158,7 @@
     <string name="selinux_persistence_summary">Restaure o modo SELinux acima definido a cada inicialização</string>
     <string name="selinux_permissive_toast_title">SELinux definido como permissivo!</string>
     <string name="selinux_enforcing_toast_title">SELinux definido para forçando!</string>
+
+    <string name="cannot_get_su">A ação falhou devido à falta de acesso de superusuário</string>
 
 </resources>
