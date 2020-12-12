@@ -244,7 +244,7 @@ PRODUCT_PACKAGES += \
     CameraGo
 
 PRODUCT_PACKAGES += \
-    libc++demangle_vendor \
+    libc++demangle \
     libshim_megvii
 
 PRODUCT_PACKAGES += \
