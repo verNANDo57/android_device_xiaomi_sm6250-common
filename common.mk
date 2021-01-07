@@ -241,6 +241,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     libstdc++.vendor \
     libgui_vendor \
+    Snap \
     CameraGo
 
 PRODUCT_PACKAGES += \
