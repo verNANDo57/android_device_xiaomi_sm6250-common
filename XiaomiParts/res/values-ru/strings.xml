@@ -161,4 +161,11 @@
 
     <string name="cannot_get_su">Не удалось получить права суперпользователя</string>
 
+ <!-- Charging -->
+    <string name="smart_charging_main_title">Аккумулятор</string>
+    <string name="smart_charging_title">Умная зарядка</string>
+    <string name="smart_charging_summary">Поможет охладить &amp; , заодно убережёт устройство от чрезмерной зарядки</string>
+    <string name="reset_stats_title">Сбросить статистику</string>
+    <string name="reset_stats_summary">Будет удалена статистика использования аккумулятора</string>
+
 </resources>
